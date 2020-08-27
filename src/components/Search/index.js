@@ -1,17 +1,17 @@
 import React from 'react';
 import './styles.css';
+import api from '../../api';
 
-const Search = () => {
+const Search = ({ setUserinfo }) => {
   const [username, setUsername] = React.useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    api.get(`/${username}`).then((response) => setUserinfo(response.data));
   };
+
   return (
     <form onSubmit={handleSubmit}>
-      {/* <label htmlFor="name">
-        <b>GitHub Finder</b>
-      </label> */}
       <input
         id="username"
         placeholder="Insira o nome do usuário no GitHub"
@@ -19,8 +19,6 @@ const Search = () => {
         required
         value={username}
         onChange={({ target }) => setUsername(target.value)}
-        // onBlur={handleBlur}
-        // className={errors.name && touched.name ? 'error' : ''}
       />
       {/* {errors.name && errors.touched && <div className="input-feedback">{errors.name}</div>} */}
 

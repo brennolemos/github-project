@@ -3,14 +3,15 @@ import './App.css';
 import Search from './components/Search';
 import User from './components/User';
 
-function App() {
+const App = () => {
+  const [userinfo, setUserinfo] = React.useState(null);
   return (
     <div className="App">
       <h1>Github Finder</h1>
-      <Search />
-      <User />
+      <Search setUserinfo={setUserinfo} />
+      {userinfo && <User userinfo={userinfo} />}
     </div>
   );
-}
+};
 
 export default App;

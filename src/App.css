@@ -7,6 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 0.5rem;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;

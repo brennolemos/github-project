@@ -2,14 +2,15 @@ import React from 'react';
 import UserInfo from './UserInfo';
 import Map from './Map';
 import Repos from './Repos';
+import './styles.css';
 
-const User = () => {
+const User = ({ userinfo }) => {
+  console.log(userinfo);
   return (
     <div className="User">
-      <h1>User</h1>
-      <UserInfo />
-      <Map />
-      <Repos />
+      <UserInfo userinfo={userinfo} />
+      <Map location={userinfo.location} />
+      <Repos username={userinfo.login} />
     </div>
   );
 };
