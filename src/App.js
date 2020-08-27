@@ -2,15 +2,20 @@ import React from 'react';
 import './App.css';
 import Search from './components/Search';
 import User from './components/User';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 const App = () => {
-  const [userinfo, setUserinfo] = React.useState(null);
   return (
-    <div className="App">
-      <h1>Github Finder</h1>
-      <Search setUserinfo={setUserinfo} />
-      {userinfo && <User userinfo={userinfo} />}
-    </div>
+    <BrowserRouter>
+      <Route path="/">
+        <div className="App">
+          <div className="App-container">
+            <Search />
+            <Route path="/user/:username" component={User} />
+          </div>
+        </div>
+      </Route>
+    </BrowserRouter>
   );
 };
 

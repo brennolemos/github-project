@@ -10,21 +10,38 @@ body {
 img {
   max-width: 100%;
   display: block;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #61dafb;
+  /* color: #007eff; */
+}
+
+li {
+  list-style: none;
 }
 
 .App {
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.App-container {
+  max-width: 960px;
+  margin: 0 auto;
 }

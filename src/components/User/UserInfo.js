@@ -4,10 +4,16 @@ const UserInfo = ({ userinfo }) => {
   return (
     <div className="User-info">
       <h2>Userinfo</h2>
-      <img src={userinfo.avatar_url} alt="" />
-      <p>Apelido: {userinfo.login}</p>
-      <p>Bio: {userinfo.bio}</p>
-      <p>Url: {userinfo.html_url}</p>
+      <img className="avatar" src={userinfo.avatar_url} alt={userinfo.login} />
+      <p>{userinfo.login}</p>
+      <p>{userinfo.bio}</p>
+      <a
+        href={`${userinfo.html_url}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {userinfo.html_url}
+      </a>
     </div>
   );
 };

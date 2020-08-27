@@ -1,5 +1,11 @@
 .User {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 20rem 1fr;
   grid-gap: 20px;
+}
+
+.box {
+  padding: 1rem;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
 }
