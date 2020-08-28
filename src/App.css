@@ -44,7 +44,7 @@ li {
 }
 
 .Main {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto 2rem auto;
   flex: 1;
 }
