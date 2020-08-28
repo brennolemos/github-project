@@ -3,7 +3,7 @@ import React from 'react';
 const UserInfo = ({ userinfo }) => {
   return (
     <div className="User-info box">
-      <h2>Userinfo</h2>
+      <h2>Infos do Usuário</h2>
       <img className="avatar" src={userinfo.avatar_url} alt={userinfo.login} />
       <p>{userinfo.login}</p>
       <p>{userinfo.bio}</p>

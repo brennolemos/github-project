@@ -6,6 +6,8 @@ import './styles.css';
 import { useParams } from 'react-router-dom';
 import api from '../../api';
 import Head from '../Head';
+import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 
 const User = () => {
   const { username } = useParams();
@@ -17,6 +19,7 @@ const User = () => {
     const fetchData = async (username) => {
       try {
         setLoading(true);
+        setError(null);
         const { data } = await api.get(`/${username}`);
         setData(data);
       } catch (err) {
@@ -28,8 +31,8 @@ const User = () => {
     fetchData(username);
   }, [username]);
 
-  if (loading) return <div>Carregando...</div>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <Loading />;
+  if (error) return <Error error={error} />;
   if (data === null) return null;
   return (
     <section className="User animeUp">

@@ -12,7 +12,7 @@ const Repos = ({ username }) => {
 
   return (
     <div className="Repos box">
-      <h2>Repos</h2>
+      <h2>Repositórios Favoritos</h2>
       <ul className="repos-list">
         {repos.map((repo) => (
           <li className="repo" key={repo.id}>
