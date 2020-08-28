@@ -28,8 +28,8 @@ li {
 
 a {
   text-decoration: none;
-  color: #61dafb;
-  /* color: #007eff; */
+  /* color: #61dafb; */
+  color: #007eff;
 }
 
 li {
@@ -37,10 +37,10 @@ li {
 }
 
 .App {
-  text-align: center;
-  background-color: #282c34;
+  /* text-align: center; */
+  /* background-color: #282c34; */
   min-height: 100vh;
-  color: #fff;
+  /* color: #fff; */
   padding: 2rem;
 }
 

@@ -1,14 +1,15 @@
 import React from 'react';
 import './styles.css';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const Search = () => {
-  let history = useHistory();
-  const [username, setUsername] = React.useState('');
+  const history = useHistory();
+  const { pathname } = useLocation();
+  const [name, setName] = React.useState(pathname.replace('/', ''));
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    history.push(`/${username}`);
+    history.push(`/${name}`);
   };
 
   return (
@@ -16,12 +17,12 @@ const Search = () => {
       <h1>Github Finder</h1>
       <form onSubmit={handleSubmit}>
         <input
-          id="username"
+          id="name"
           placeholder="Insira o nome do usuário no GitHub"
           type="text"
           required
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
+          value={name}
+          onChange={({ target }) => setName(target.value)}
         />
         {/* {errors.name && errors.touched && <div className="input-feedback">{errors.name}</div>} */}
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './Repos.css';
 
 const Repos = ({ username }) => {
   const [repos, setRepos] = React.useState([]);
@@ -8,12 +9,15 @@ const Repos = ({ username }) => {
       .get(`https://api.github.com/users/${username}/starred`)
       .then((response) => setRepos(response.data));
   }, [username]);
+
   return (
-    <div className="Repos">
+    <div className="Repos box">
       <h2>Repos</h2>
-      <ul>
+      <ul className="repos-list">
         {repos.map((repo) => (
-          <li>{repo.name}</li>
+          <li className="repo" key={repo.id}>
+            {repo.name}
+          </li>
         ))}
       </ul>
     </div>
