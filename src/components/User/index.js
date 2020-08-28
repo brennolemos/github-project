@@ -5,6 +5,7 @@ import Repos from './Repos';
 import './styles.css';
 import { useParams } from 'react-router-dom';
 import api from '../../api';
+import Head from '../Head';
 
 const User = () => {
   const { username } = useParams();
@@ -17,6 +18,7 @@ const User = () => {
   if (userinfo)
     return (
       <section className="User animeUp">
+        <Head />
         <div className="box">
           <UserInfo userinfo={userinfo} />
         </div>

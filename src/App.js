@@ -11,7 +11,7 @@ const App = () => {
         <div className="App">
           <div className="App-container">
             <Search />
-            <Route path="/user/:username" component={User} />
+            <Route path="/:username" component={User} />
           </div>
         </div>
       </Route>

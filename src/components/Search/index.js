@@ -8,7 +8,7 @@ const Search = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    history.push(`/user/${username}`);
+    history.push(`/${username}`);
   };
 
   return (
