@@ -40,14 +40,17 @@ li {
 .App {
   /* text-align: center; */
   /* background-color: #282c34; */
+  display: flex;
   min-height: 100vh;
+  flex-direction: column;
   /* color: #fff; */
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
-.App-container {
+.Main {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
+  flex: 1;
 }
 
 .animeUp {

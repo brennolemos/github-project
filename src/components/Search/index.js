@@ -14,19 +14,18 @@ const Search = () => {
 
   return (
     <section className="search">
-      <h1>Github Finder</h1>
+      <h1 className="title">Insira o nome do usuário no GitHub</h1>
       <form onSubmit={handleSubmit}>
         <input
-          id="name"
-          placeholder="Insira o nome do usuário no GitHub"
+          name="busca"
+          id="busca"
           type="text"
+          placeholder="Buscar..."
           required
           value={name}
           onChange={({ target }) => setName(target.value)}
         />
-        {/* {errors.name && errors.touched && <div className="input-feedback">{errors.name}</div>} */}
-
-        <button type="submit">Pesquisar</button>
+        <input type="submit" id="lupa" value="Buscar" />
       </form>
     </section>
   );
