@@ -15,6 +15,18 @@ const User = () => {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
 
+  const errors = {
+    400: 'Requisição inválida',
+    401: 'Não autorizado',
+    403: 'Proibido',
+    404: 'Usuário Não encontrado',
+    408: 'Tempo de requisição esgotou',
+    500: 'Erro interno do servidor',
+    502: 'Bad Gateway',
+    503: 'Serviço indisponível',
+    504: 'Gateway Time-out',
+  };
+
   React.useEffect(() => {
     const fetchData = async (username) => {
       try {
@@ -23,7 +35,11 @@ const User = () => {
         const { data } = await api.get(`/${username}`);
         setData(data);
       } catch (err) {
-        setError(err.message);
+        setError(
+          errors[err.response.status] !== undefined
+            ? errors[err.response.status]
+            : 'Erro desconhecido. Por favor, tente novamente mais tarde.',
+        );
       } finally {
         setLoading(false);
       }

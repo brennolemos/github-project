@@ -1,13 +1,13 @@
 import React from 'react';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker, TileLayer } from 'react-leaflet';
 import './Map.css';
 import axios from 'axios';
-import Loading from '../Loading/Loading';
 
 const Location = ({ location }) => {
   const [coord, setCoord] = React.useState(null);
 
   React.useEffect(() => {
+    console.log(location);
     const fetchCoordinates = async () => {
       const { data } = await axios.get(
         `https://nominatim.openstreetmap.org/search?q=${location}&format=json`,
@@ -16,6 +16,13 @@ const Location = ({ location }) => {
     };
     fetchCoordinates();
   }, [location]);
+
+  if (!location)
+    return (
+      <div className="Map box">
+        <p>Usuário não informou localização.</p>
+      </div>
+    );
 
   if (coord)
     return (
