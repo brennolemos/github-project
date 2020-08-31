@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Search from './components/Search/Search';
 import User from './components/User/User';
@@ -8,7 +8,7 @@ import './App.css';
 
 const App = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename="/">
       <Route path={'/'}>
         <div className="App">
           <Header />
@@ -19,7 +19,7 @@ const App = () => {
           <Footer />
         </div>
       </Route>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
