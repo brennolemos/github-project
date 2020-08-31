@@ -8,13 +8,13 @@ import './App.css';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Route path="/">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Route path={'/'}>
         <div className="App">
           <Header />
           <Search />
           <main className="Main">
-            <Route path="/:username" component={User} />
+            <Route path={'/:username'} component={User} />
           </main>
           <Footer />
         </div>
