@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles.css';
 import { useHistory, useLocation } from 'react-router-dom';
+import './Search.css';
 
 const Search = () => {
   const history = useHistory();
@@ -25,7 +25,7 @@ const Search = () => {
           value={name}
           onChange={({ target }) => setName(target.value)}
         />
-        <input type="submit" id="lupa" value="Buscar" />
+        <button type="submit" id="lupa"></button>
       </form>
     </section>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
-import './Header.css';
 import { Link } from 'react-router-dom';
+import { ReactComponent as Github } from '../../assets/github.svg';
+import './Header.css';
 
 const Header = () => {
   return (
@@ -8,6 +9,13 @@ const Header = () => {
       <Link className="brand" to="/">
         <h2>Github Finder</h2>
       </Link>
+      <a
+        href="https://github.com/brennolemos/github-project"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Github />
+      </a>
     </header>
   );
 };

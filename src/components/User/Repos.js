@@ -8,7 +8,6 @@ const Repos = ({ username }) => {
     axios
       .get(`https://api.github.com/users/${username}/starred`)
       .then((response) => setRepos(response.data));
-    console.log(repos);
   }, [username]);
 
   return (

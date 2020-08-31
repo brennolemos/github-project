@@ -15,5 +15,10 @@
   .User {
     grid-template-columns: 1fr;
     gap: 0;
+    padding: 0 1rem;
+  }
+
+  .box {
+    margin-bottom: 1.5rem;
   }
 }

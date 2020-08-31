@@ -1,13 +1,12 @@
 import React from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
-import './Map.css';
 import axios from 'axios';
+import './Map.css';
 
 const Location = ({ location }) => {
   const [coord, setCoord] = React.useState(null);
 
   React.useEffect(() => {
-    console.log(location);
     const fetchCoordinates = async () => {
       const { data } = await axios.get(
         `https://nominatim.openstreetmap.org/search?q=${location}&format=json`,

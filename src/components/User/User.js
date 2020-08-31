@@ -1,13 +1,13 @@
 import React from 'react';
-import UserInfo from './UserInfo';
+import { useParams } from 'react-router-dom';
 import Map from './Map';
 import Repos from './Repos';
-import './styles.css';
-import { useParams } from 'react-router-dom';
+import UserInfo from './UserInfo';
 import api from '../../api';
 import Head from '../Head';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
+import './User.css';
 
 const User = () => {
   const { username } = useParams();
